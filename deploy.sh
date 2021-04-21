@@ -14,11 +14,13 @@ cd docs/.vuepress/dist
 if [ -z "$VDOING" ]; then
   msg='deploy'
   githubUrl=git@github.com:tewutuyo/vdoingBlog.git
+  echo "成功"
 else
   msg='来自 github actions的自动部署'
   githubUrl=https://tewutuyo:${VDOING}@github.com/tewutuyo/vdoingBlog.git
   git config --global user.name "tewutuyo"
   git config --global user.email "4297751@qq.com"
+  echo "失败"
 fi
 git init
 git add -A
